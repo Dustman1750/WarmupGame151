@@ -8,10 +8,10 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: water
-  m_Shader: {fileID: 4800000, guid: a7fcd28dd9e4b3342a9ea759c020f05c, type: 3}
+  m_Shader: {fileID: 4800000, guid: 0262ba34ae8bafc4b8bbbeb050d6f697, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap:
@@ -115,6 +115,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_6B048DD5: 0.2
+    - Vector1_7A3D6F21: 3
+    - Vector1_A44A99D3: 0.71
+    - Vector1_B5F54B97: 30
     - Vector1_C5BAE73C: 0.65
     - Vector1_D48B9372: 0.71
     - _AORemapMax: 1
@@ -228,9 +231,15 @@ Material:
     - _ZTestModeDistortion: 8
     - _ZWrite: 1
     m_Colors:
+    - Color_3AD25332: {r: 0.1882353, g: 1.356863, b: 0.05490196, a: 1}
+    - Color_3B6785B8: {r: 0, g: 0, b: 0, a: 0}
+    - Color_47DF6712: {r: 0, g: 0.0627451, b: 1.882353, a: 0.7764706}
+    - Color_4FB3BDFA: {r: 0.05490196, g: 0.08235294, b: 0.7607843, a: 0.6980392}
+    - Color_A85EC6FA: {r: 1.552941, g: 0.7294118, b: 0.7294118, a: 0}
     - Color_CC0530A1: {r: 0, g: 0.022405703, b: 0.5377358, a: 0}
     - Color_D93CF71C: {r: 0.07647059, g: 0.1921569, b: 0.3058824, a: 1}
     - Color_E7C469: {r: 0.013216449, g: 0.19642377, b: 0.254717, a: 0}
+    - Vector2_63DB4AF2: {r: 0.05, g: 0.07, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
