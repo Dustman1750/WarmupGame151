@@ -13,19 +13,20 @@ public class BubblesStart : MonoBehaviour
         if(bubs.isPlaying)
         {
             bubs.Pause();
+            bubs.Clear();
         }
     }
 
     private void Update()
     {
-        if (transform.position.y <= -11)
+        if (GetComponentInParent<Transform>().transform.position.y <= -11)
         {
             bubs.Play();
         }
         else
         {
-
             bubs.Pause();
+            bubs.Clear();
         }
     }
 }
