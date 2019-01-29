@@ -9,34 +9,64 @@ public class Controller : MonoBehaviour
 
     public float SwimStrokeForce;
 
+    public float Smoothing;
+
+    public GameObject DiveBlocker;
+
     private Rigidbody rb;
+    private bool Done;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        Done = false;
     }
 
     private void Update()
     {
-        if(Input.GetAxis("Vertical") <= 0)
+        if(Input.GetAxis("Vertical") <= 0 && !Done)
         {
-            Stroke();
+            Stroke(Input.GetAxis("Vertical"));
         }
 
-        if(Input.GetAxis("Horizontal") != 0)
+        if(Input.GetAxis("Horizontal") != 0 && !Done)
         {
             Swim(Input.GetAxis("Horizontal"));
+        }
+        if(Input.GetKeyDown(KeyCode.Space) && DiveBlocker.activeInHierarchy && !Done)
+        {
+            DiveBlocker.SetActive(false);
         }
     }
 
     private void FixedUpdate()
     {
-        rb.AddForce(0, FloatingForce, 0, ForceMode.Impulse);
+        if (transform.position.y <= -3 && !Done)
+        {
+            rb.AddForce(0, FloatingForce, 0, ForceMode.Impulse);
+        }
+
+        if (Done)
+        {
+            var desiredPos = new Vector3(0,-1.5f,-.6f);
+
+            var smoothedPos = Vector3.Lerp(transform.position, desiredPos, Smoothing);
+
+            transform.position = smoothedPos;
+
+            if(transform.position.y >= DiveBlocker.GetComponentInParent<Transform>().transform.position.y)
+            {
+                Done = false;
+
+                DiveBlocker.SetActive(true);
+            }
+        }
     }
 
-    private void Stroke()
+    private void Stroke(float dir)
     {
-        rb.AddForce(0, SwimStrokeForce, 0, ForceMode.Impulse);
+        rb.AddForce(0, dir*SwimStrokeForce, 0, ForceMode.Impulse);
     }
 
     private void Swim(float dir)
@@ -46,6 +76,8 @@ public class Controller : MonoBehaviour
 
     public void OnDiveOver()
     {
+        Debug.Log("OnDiveOver");
 
+        Done = true;
     }
 }

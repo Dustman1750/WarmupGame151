@@ -1,20 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
     public Transform PlayerPos;
 
-    public int Smoothing;
-    
-    private void Update()
-    {
-        
-    }
+    public float Smoothing = 0.125f;
 
-    private void LateUpdate()
+    public Vector3 Offset;
+
+    private void FixedUpdate()
     {
-        
+        var desiredPos = PlayerPos.position + Offset;
+
+        desiredPos.x = 0;
+
+        var smoothedPos = Vector3.Lerp(transform.position, desiredPos, Smoothing);
+
+        transform.position = smoothedPos;
+
+       // transform.LookAt(PlayerPos);
     }
 }
