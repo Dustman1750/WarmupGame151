@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DeapthGauge : MonoBehaviour
 {
     private Text Depth;
+    public Text Max;
 
     private float StartPos;
 
@@ -19,6 +20,8 @@ public class DeapthGauge : MonoBehaviour
         StartPos = Camera.main.transform.position.y;
 
         CurrentPos = StartPos;
+
+        Max.text = "Record: " + Maneger.Instance.GD.MaxDepth;
 
         StartCoroutine("Counter");
     }
@@ -44,6 +47,8 @@ public class DeapthGauge : MonoBehaviour
         if (Maneger.Instance.GD.MaxDepth <= curDepth)
         {
             Maneger.Instance.GD.MaxDepth = curDepth;
+
+            Max.text = "Record: " + Maneger.Instance.GD.MaxDepth;
         }
     }
 

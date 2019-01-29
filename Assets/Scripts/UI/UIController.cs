@@ -43,8 +43,6 @@ public class UIController : MonoBehaviour
     public void GoToStart()
     {
         SceneManager.LoadScene("Level");
-
-        Maneger.Instance.Load();
     }
 
     public void Quit()

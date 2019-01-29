@@ -17,6 +17,7 @@ public class Maneger : MonoBehaviour
         {
             Instance = this;
             GD = new GameData();
+            Load();
             DontDestroyOnLoad(this);
         }
         else
