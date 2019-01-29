@@ -10,6 +10,9 @@ public class DiveTimer : MonoBehaviour
 
     private Slider Bar;
 
+    public bool Diving;
+    public bool running;
+
     public float TimeAllowed;
 
     private float timeRemaining;
@@ -18,22 +21,48 @@ public class DiveTimer : MonoBehaviour
     {
         Bar = GetComponentInChildren<Slider>();
 
-        timeRemaining = TimeAllowed;
+        running = false;
 
-        StartCoroutine("DiveTime");
+        Diving = false;
+
+        timeRemaining = TimeAllowed;
     }
 
     private void LateUpdate()
     {
-        if(Bar.value <= 0)
+        if(Camera.main.transform.position.y <= -5 && !Diving && !running)
+        {
+            StartCoroutine("DiveTime");
+
+            Diving = true;
+        }
+        if(Bar.value <= 0 && Diving && running)
         {
             OnDiveComplete?.Invoke();
+
+            StopCoroutine("DiveTime");
+
+            running = false;
+
+            Diving = false;
+
+            Bar.value = 1;
+
+            TimeAllowed = Maneger.Instance.GD.DiveTime;
+
+            timeRemaining = TimeAllowed;
         }
     }
 
     IEnumerator DiveTime()
     {
-        while(true)
+        Debug.Log("Started");
+
+        TimeAllowed = Maneger.Instance.GD.DiveTime;
+
+        running = true;
+
+        while (true)
         {
             yield return new WaitForEndOfFrame();
 

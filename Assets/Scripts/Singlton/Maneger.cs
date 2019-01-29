@@ -7,11 +7,7 @@ public class Maneger : MonoBehaviour
 {
     public static Maneger Instance;
 
-    public int DiveTimeAllowed;
-
-    public int NumberOfDives;
-
-    private GameData GD;
+    public GameData GD;
 
     private BinaryFormatter BF;
 
@@ -20,18 +16,13 @@ public class Maneger : MonoBehaviour
         if(Instance == null)
         {
             Instance = this;
+            GD = new GameData();
             DontDestroyOnLoad(this);
         }
         else
         {
             Destroy(this.gameObject);
         }
-    }
-
-    private void Start()
-    {
-
-        GD = new GameData();
     }
 
     public void Save()
@@ -44,7 +35,7 @@ public class Maneger : MonoBehaviour
             { "TimesPlayed", GD.TimesPlayed }
         };
 
-        var fs = new FileStream(Application.streamingAssetsPath + "GameData.dat", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+        var fs = new FileStream(Application.streamingAssetsPath + "\\GameData.dat", FileMode.OpenOrCreate, FileAccess.ReadWrite);
 
         BF.Serialize(fs, Hash);
 
@@ -55,7 +46,7 @@ public class Maneger : MonoBehaviour
     {
         BF = new BinaryFormatter();
         var Hash = new Hashtable();
-        var fs = new FileStream(Application.streamingAssetsPath + "GameData.dat", FileMode.Open, FileAccess.ReadWrite);
+        var fs = new FileStream(Application.streamingAssetsPath + "\\GameData.dat", FileMode.Open, FileAccess.ReadWrite);
 
         Hash = (Hashtable)BF.Deserialize(fs);
 
@@ -72,5 +63,12 @@ public class Maneger : MonoBehaviour
                 GD.TimesPlayed = (int)de.Value;
             }
         }
+    }
+
+    public void OnDiveComplete()
+    {
+
+        GD.TimesPlayed++;
+        GD.DiveTime += 2;
     }
 }

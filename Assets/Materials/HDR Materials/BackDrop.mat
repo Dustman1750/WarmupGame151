@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PoolWall
-  m_Shader: {fileID: 4800000, guid: 93615e4f766adc24e9fc37d6c259dad6, type: 3}
+  m_Name: BackDrop
+  m_Shader: {fileID: 4800000, guid: 71d240b1fe86e10488ae162b65ebf529, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -21,8 +21,8 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_DBF0AA6:
-        m_Texture: {fileID: 2800000, guid: 8c3a1f0dbca58d341947c3001d54c9ad, type: 3}
+    - Texture2D_B3C067B9:
+        m_Texture: {fileID: 2800000, guid: 895020969ef1a6c4abcb29bc48294b73, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AnisotropyMap:
@@ -110,8 +110,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_8BAC5C9B: 15
-    - Vector1_E0AE16FF: 6.87
     - _AORemapMax: 1
     - _AORemapMin: 0
     - _ATDistance: 1
@@ -223,7 +221,6 @@ Material:
     - _ZTestModeDistortion: 8
     - _ZWrite: 1
     m_Colors:
-    - Color_3FECE240: {r: 0.57254905, g: 0.047058824, b: 0.4, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
