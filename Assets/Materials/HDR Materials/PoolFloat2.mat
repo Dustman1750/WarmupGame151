@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CellPulse
-  m_Shader: {fileID: 4800000, guid: 741af71eac1c4304e928a41d0f54b64e, type: 3}
+  m_Name: PoolFloat2
+  m_Shader: {fileID: 4800000, guid: d8b91c71634058440a9cfd66da708b56, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -21,10 +21,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_DBF0AA6:
-        m_Texture: {fileID: 2800000, guid: 8c3a1f0dbca58d341947c3001d54c9ad, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _AnisotropyMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -110,11 +106,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_7A3D6F21: 10
-    - Vector1_8BAC5C9B: 15
-    - Vector1_A44A99D3: 0.5
-    - Vector1_B5F54B97: 30
-    - Vector1_E0AE16FF: 6
+    - Vector1_FFDFE86F: 4
     - _AORemapMax: 1
     - _AORemapMin: 0
     - _ATDistance: 1
@@ -226,11 +218,8 @@ Material:
     - _ZTestModeDistortion: 8
     - _ZWrite: 1
     m_Colors:
-    - Color_3AD25332: {r: 0.38361573, g: 2.2590704, b: 0.11366393, a: 1}
-    - Color_3FECE240: {r: 0, g: 0.4156863, b: 0.7764706, a: 0}
-    - Color_47DF6712: {r: 0.2358491, g: 0, b: 0, a: 1}
-    - Color_4FB3BDFA: {r: 0.05490196, g: 0.08235294, b: 0.7607843, a: 0.6980392}
-    - Vector2_63DB4AF2: {r: 0.05, g: 0.07, b: 0, a: 0}
+    - Color_38743DDC: {r: 1.6627451, g: 0, b: 1.0039216, a: 0}
+    - Color_A69BBB0A: {r: 0.13333334, g: 1.1921569, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
