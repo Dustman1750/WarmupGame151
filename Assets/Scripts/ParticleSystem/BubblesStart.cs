@@ -6,9 +6,16 @@ public class BubblesStart : MonoBehaviour
 {
     ParticleSystem bubs;
 
+    public GameObject Sub;
+
     private void Start()
     {
         bubs = GetComponentInChildren<ParticleSystem>();
+
+        if(Sub.activeInHierarchy)
+        {
+            Sub.SetActive(false);
+        }
 
         if(bubs.isPlaying)
         {
@@ -19,14 +26,17 @@ public class BubblesStart : MonoBehaviour
 
     private void Update()
     {
-        if (GetComponentInParent<Transform>().transform.position.y <= -11)
+        if (Camera.main.transform.position.y < -8 && !bubs.isPlaying)
         {
             bubs.Play();
         }
-        else
+        else if(Camera.main.transform.position.y >= -8 && bubs.isPlaying)
         {
+            Sub.SetActive(false);
+
             bubs.Pause();
             bubs.Clear();
         }
     }
+    
 }

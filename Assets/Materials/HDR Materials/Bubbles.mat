@@ -222,7 +222,7 @@ Material:
     - _ZTestModeDistortion: 8
     - _ZWrite: 1
     m_Colors:
-    - Color_2F1622: {r: 0.854902, g: 0.8705882, b: 1.356863, a: 0.9529412}
+    - Color_2F1622: {r: 0.23579091, g: 0.26567522, b: 1.2817351, a: 0.9529412}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}

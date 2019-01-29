@@ -32,7 +32,8 @@ public class Maneger : MonoBehaviour
         var Hash = new Hashtable
         {
             { "DiveTime", GD.DiveTime },
-            { "TimesPlayed", GD.TimesPlayed }
+            { "TimesPlayed", GD.TimesPlayed },
+            { "MaxDepth",GD.MaxDepth }
         };
 
         var fs = new FileStream(Application.streamingAssetsPath + "\\GameData.dat", FileMode.OpenOrCreate, FileAccess.ReadWrite);
@@ -61,6 +62,10 @@ public class Maneger : MonoBehaviour
             if (de.Key.ToString() == "TimesPlayed")
             {
                 GD.TimesPlayed = (int)de.Value;
+            }
+            if(de.Key.ToString() == "MaxDepth")
+            {
+                GD.MaxDepth = (int)de.Value;
             }
         }
     }
