@@ -5367,7 +5367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b2720395dbf6804eb046b12105b92df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PanSpeed: 0.2
+  PanSpeed: 0.005
   BackgroundSize: 0
   Scrolling: 0
   Parallax: 0
@@ -5641,21 +5641,26 @@ PrefabInstance:
     - target: {fileID: 926632901046816276, guid: b5c4e2faf2cd4cf4a92e997d5a8cdc97,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.54901963
+      value: 0.7122642
       objectReference: {fileID: 0}
     - target: {fileID: 926632901046816276, guid: b5c4e2faf2cd4cf4a92e997d5a8cdc97,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.5529412
+      value: 0.9783121
       objectReference: {fileID: 0}
     - target: {fileID: 926632901046816276, guid: b5c4e2faf2cd4cf4a92e997d5a8cdc97,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.5568628
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 926632901046816276, guid: b5c4e2faf2cd4cf4a92e997d5a8cdc97,
         type: 3}
       propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 926632901046816276, guid: b5c4e2faf2cd4cf4a92e997d5a8cdc97,
+        type: 3}
+      propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5186897084890115572, guid: b5c4e2faf2cd4cf4a92e997d5a8cdc97,
@@ -5985,6 +5990,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977350091638922004, guid: 4a3cbf0a80d4a6f43a4e1bd02d5016a6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a3cbf0a80d4a6f43a4e1bd02d5016a6, type: 3}
