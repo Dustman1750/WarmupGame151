@@ -5,10 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Controller : MonoBehaviour
 {
+    [Header("Swim Speed Adjustments")]
     public float FloatingForce;
-
+    
     public float SwimStrokeForce;
-
+    
     public float Smoothing;
 
     public GameObject DiveBlocker;
@@ -42,20 +43,22 @@ public class Controller : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (transform.position.y <= -3 && !Done)
+        if (transform.position.y <= -4.5)
         {
             rb.AddForce(0, FloatingForce, 0, ForceMode.Impulse);
         }
 
         if (Done)
         {
-            var desiredPos = new Vector3(0,-1.5f,-.6f);
+            rb.velocity = Vector3.zero;
+
+            var desiredPos = new Vector3(0,-2.6f,-.6f);
 
             var smoothedPos = Vector3.Lerp(transform.position, desiredPos, Smoothing);
 
             transform.position = smoothedPos;
 
-            if(transform.position.y >= DiveBlocker.GetComponentInParent<Transform>().transform.position.y)
+            if(transform.position.y > DiveBlocker.GetComponentInParent<Transform>().transform.position.y + 0.5f)
             {
                 Done = false;
 
@@ -77,6 +80,8 @@ public class Controller : MonoBehaviour
     public void OnDiveOver()
     {
         Debug.Log("OnDiveOver");
+
+        rb.velocity = Vector3.zero;
 
         Done = true;
     }

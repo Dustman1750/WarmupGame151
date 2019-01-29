@@ -43,5 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbb880ac7e0c0914db68fc576c5d30c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DiveTimeAllowed: 5
-  NumberOfDives: 0
+  GD:
+    DiveTime: 5
+    TimesPlayed: 0

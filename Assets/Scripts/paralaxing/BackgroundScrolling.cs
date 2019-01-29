@@ -22,7 +22,9 @@ public class BackgroundScrolling : MonoBehaviour
 
     public Transform[] backgrounds;
 
-    private Vector3 bgVector;
+    public Vector3 bgVector = new Vector3(0, 1, .5f);
+
+    private float initialY;
 
     private void Start()
     {        
@@ -37,11 +39,10 @@ public class BackgroundScrolling : MonoBehaviour
             backgrounds[i] = transform.GetChild(i);
         }
 
+        initialY = this.transform.position.y;
         topIndex = 0;
 
         bottomIndex = backgrounds.Length - 1;
-
-        bgVector = new Vector3(0, 1, .5f);
 
         Scrolling = false;
         Parallax = false;
@@ -76,7 +77,7 @@ public class BackgroundScrolling : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (Parallax)
+        if (Parallax || this.transform.position.y < initialY)
         {
             var deltaY = camTrans.position.y - lastCamY;
 

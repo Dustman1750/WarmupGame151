@@ -43,8 +43,6 @@ public class UIController : MonoBehaviour
     public void GoToStart()
     {
         SceneManager.LoadScene("Level");
-
-        Maneger.Instance.Load();
     }
 
     public void Quit()
@@ -52,6 +50,10 @@ public class UIController : MonoBehaviour
         Maneger.Instance.Save();
 
         Application.Quit();
+
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #endif
     }
 
     public void GoToMainMenu()
